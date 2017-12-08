@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid black;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    float: left;
+
+}
+
+nav ul li:hover {
+    background-color: #fff;
+}
+
+nav ul li a {
+    height: 20px;
+    display: block;
+    padding: 15px 60px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+}
+
+nav ul li a:hover {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.aidslogin {
+    float: right;
+    padding: 0;
+}
+
+.content {
+    padding-top: 50px;
+}
+
+.contentcontainer {
+    max-width: 900px;
+    margin: 50px auto;
+
+}
+
+/*indexpagina*/
+
+.postercontainer {
+    text-align: center;
+}
+
+.movieposter {
+    height: 400px;
+    width: 250px;
+    margin: 0 auto;
+
+}
+
+.img-list {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+ul.img-list li {
+    display: inline-block;
+    height: 400px;
+    width: 250px;
+    margin: 0 1em 1em 0;
+    position: relative;
+
+}
+
+span.text-content {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    display: table;
+    height: 400px;
+    width: 250px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+
+}
+
+ul.img-list li:hover span.text-content {
+    opacity: 1;
+}
+
+span.text-content span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*showpagina*/
+.infocontainer{
+    text-align: center;
+}
+iframe {
+    width: 850px;
+    height: 480px;
+    margin: 0 auto;
+}
+
+.infobox p {
+
+}
+
+.infoposter{
+    height: 400px;
+    width: 250px;
+    float: left;
+
+}
