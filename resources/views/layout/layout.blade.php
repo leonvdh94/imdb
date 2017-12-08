@@ -35,6 +35,7 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="{{url('movie')}}">Movies</a></li>
                 <li><a href="{{url('actor')}}">Actors</a></li>
+                <li><a href="{{url('show')}}">Shows</a></li>
             </ul>
 
             <div class="aidslogin">
@@ -50,6 +51,11 @@
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
+                        <li>
+                            @if (Auth::check() && Auth::user()->role ==2)
+                            <a href="{{url('/admin')}}">Adminpage</a>
+                            @endif
+                        </li>
                         <li>
                             <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
