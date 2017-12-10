@@ -17,6 +17,7 @@ Route::get('movie/{movie}', 'MovieController@show');
 Route::get('actor', 'ActorController@index');
 Route::get('actor/{actor}', 'ActorController@show');
 
+
 //Show
 Route::get('show', 'ShowController@index');
 Route::get('show/{show}', 'ShowController@show');

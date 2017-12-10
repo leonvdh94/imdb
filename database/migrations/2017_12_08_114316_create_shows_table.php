@@ -15,6 +15,11 @@ class CreateShowsTable extends Migration
     {
         Schema::create('shows', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->date('releasedate');
+            $table->text('description');
+            $table->string('photo')->default('default.jpg');
+            $table->string('trailer');
             $table->timestamps();
         });
     }

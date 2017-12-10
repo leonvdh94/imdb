@@ -21,7 +21,7 @@
         {!! Form::text('trailer', '', ['class' => 'form-control']) !!}
     </div>
 
-    <br>
+    
 
     {!! Form::submit('create', ['class' => 'btn btn-primary']) !!}
     {!! Form::close() !!}

@@ -16,8 +16,6 @@ class MovieController extends Controller
     public function index()
     {
         $movie = Movie::all();
-
-
         return view('movie.index', compact('movie'));
     }
 
@@ -29,7 +27,6 @@ class MovieController extends Controller
     public function create()
     {
         return view('movie.create');
-//        compact('actor_id'))
     }
 
     /**
@@ -89,12 +86,12 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-       $movie->title = $request->title;
-       $movie->releasedate = $request->releasedate;
-       $movie->description = $request->description;
-       $movie->trailer =  $request->trailer;
-       
-       if ($request->hasFile('photo')) {
+     $movie->title = $request->title;
+     $movie->releasedate = $request->releasedate;
+     $movie->description = $request->description;
+     $movie->trailer =  $request->trailer;
+
+     if ($request->hasFile('photo')) {
         $file = $request->file('photo');
         $name = time() . '-' . $file->getClientOriginalname();
         $file = $file->move(public_path() . '/images/', $name);

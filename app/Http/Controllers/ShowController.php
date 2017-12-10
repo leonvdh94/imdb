@@ -15,6 +15,7 @@ class ShowController extends Controller
      */
     public function index()
     {
+        $show = Show::all();
         return view('show.index', compact('show'));
     }
 
@@ -25,7 +26,7 @@ class ShowController extends Controller
      */
     public function create()
     {
-        //
+        return view('show.create');
     }
 
     /**
@@ -36,7 +37,22 @@ class ShowController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $show = new Show();
+        $show->title = $request->title;
+        $show->releasedate = $request->releasedate;
+        $show->description = $request->description;
+        $show->trailer = $request->trailer;
+        
+
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $name = time() . '-' . $file->getClientOriginalname();
+            $file = $file->move(public_path() . '/images/', $name);
+            $show->photo = $name;
+        }
+
+        $show->save();
+        return Redirect::to('show');
     }
 
     /**
@@ -47,8 +63,8 @@ class ShowController extends Controller
      */
     public function show(Show $show)
     {
-        //
-    }
+       return view('show.show', compact('show'));
+   }
 
     /**
      * Show the form for editing the specified resource.
@@ -58,7 +74,7 @@ class ShowController extends Controller
      */
     public function edit(Show $show)
     {
-        //
+        return view('show.edit', compact('show'));
     }
 
     /**
@@ -70,7 +86,21 @@ class ShowController extends Controller
      */
     public function update(Request $request, Show $show)
     {
-        //
+        $show->title = $request->title;
+        $show->releasedate = $request->releasedate;
+        $show->description = $request->description;
+        $show->trailer =  $request->trailer;
+
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $name = time() . '-' . $file->getClientOriginalname();
+            $file = $file->move(public_path() . '/images/', $name);
+            $show->photo = $name;
+        }
+
+
+        $show->save();
+        return redirect::to('show');
     }
 
     /**

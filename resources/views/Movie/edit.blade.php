@@ -13,7 +13,7 @@
     {!! Form::date('releasedate', $movie->releasedate, ['class' => 'form-control']) !!}
 
     {!! Form::label('photo', 'Photo:')!!}
-    {!! Form::file('photo') !!}
+    {!! Form::file('photo', null) !!}
 
     {!! Form::label('description', 'Description:')!!}
     {!! Form::text('description', $movie->description, ['class' => 'form-control']) !!}
