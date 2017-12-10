@@ -13,6 +13,7 @@ Route::get('movie', 'MovieController@index');
 Route::get('movie/{movie}', 'MovieController@show');
 
 
+
 //Actor
 Route::get('actor', 'ActorController@index');
 Route::get('actor/{actor}', 'ActorController@show');
@@ -21,11 +22,7 @@ Route::get('actor/{actor}', 'ActorController@show');
 //Show
 Route::get('show', 'ShowController@index');
 Route::get('show/{show}', 'ShowController@show');
-Route::get('show/create', 'ShowController@create');
-Route::post('show', 'ShowController@store');
-Route::get('show/{show}/edit', 'ShowController@edit');
-Route::patch('show/{show}', 'ShowController@update')->name('show.update');
-Route::delete('show/{show}', 'ShowController@destroy')->name('Show.destroy');
+
 
 
 Route::group(['middleware' => 'admin'], function(){
@@ -42,6 +39,12 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('movie/{movie}/edit', 'MovieController@edit');
 	Route::patch('movie/{movie}', 'MovieController@update')->name('movie.update');
 	Route::delete('movie/{movie}', 'MovieController@destroy')->name('movie.destroy');
+	//show
+	Route::get('show/create', 'ShowController@create');
+	Route::post('show', 'ShowController@store');
+	Route::get('show/{show}/edit', 'ShowController@edit');
+	Route::patch('show/{show}', 'ShowController@update')->name('show.update');
+	Route::delete('show/{show}', 'ShowController@destroy')->name('Show.destroy');
 });
 
 

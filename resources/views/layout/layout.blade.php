@@ -53,7 +53,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li>
                             @if (Auth::check() && Auth::user()->role ==2)
-                            <a href="{{url('/admin')}}">Adminpage</a>
+                            <a href="{{url('admin')}}">Adminpage</a>
                             @endif
                         </li>
                         <li>
