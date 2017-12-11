@@ -11,7 +11,7 @@ class ShowSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('shows')->insert([
+      DB::table('shows')->insert([
             'title' => 'Narcos',
             'releasedate' => '2015-08-28',
             'description' => 'A chronicled look at the criminal exploits of Colombian drug lord Pablo Escobar, as well as the many other drug kingpins who plagued the country 
@@ -54,5 +54,6 @@ class ShowSeeder extends Seeder
             'photo' => 'prisonbreak.jpg',
             'trailer' => 'AL9zLctDJaU'
         ]);
+    
     }
 }

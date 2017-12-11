@@ -22,7 +22,7 @@
     {!! Form::textarea('bio', $actor->bio, ['class' => 'form-control']) !!}
 
     {!! Form::label('photo', 'Photo:') !!}
-    {!! Form::file('photo') !!}
+    {!! Form::file('photo', null) !!}
 </div>
 
 <br>

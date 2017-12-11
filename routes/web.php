@@ -44,7 +44,7 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::post('show', 'ShowController@store');
 	Route::get('show/{show}/edit', 'ShowController@edit');
 	Route::patch('show/{show}', 'ShowController@update')->name('show.update');
-	Route::delete('show/{show}', 'ShowController@destroy')->name('Show.destroy');
+	Route::delete('show/{show}', 'ShowController@destroy')->name('show.destroy');
 });
 
 

@@ -17,6 +17,5 @@ class DatabaseSeeder extends Seeder
         $this->call(ActorSeeder::class);     
         $this->call(RoleSeeder::class); 
         $this->call(ShowSeeder::class); 
-
     }
 }
