@@ -63,8 +63,8 @@ class ShowController extends Controller
      */
     public function show(Show $show)
     {
-       return view('show.show', compact('show'));
-   }
+     return view('show.show', compact('show'));
+ }
 
     /**
      * Show the form for editing the specified resource.
@@ -109,8 +109,10 @@ class ShowController extends Controller
      * @param  \App\Show  $show
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Show $show)
+    public function destroy($id)
     {
-        //
-    }
+       $show = Show::find($id);
+       $show->delete();
+       return back();
+   }
 }

@@ -9,8 +9,6 @@
             <a href="{{url('actor/'.$actors->id)}}">
                 <img class="movieposter" src="{{asset('images/'.$actors->photo)}}">
                 <span class="text-content"><span>{{$actors->firstname}} {{$actors->lastname}}</span></span>
-
-
             </a>
         </li>
 

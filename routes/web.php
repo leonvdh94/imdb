@@ -28,8 +28,11 @@ Route::get('show/{show}', 'ShowController@show');
 
 Route::group(['middleware' => 'admin'], function(){
 	Route::get('/admin', 'AdminController@index');
+	
+    Route::delete('user/{user}', 'UserController@destroy')->name('user.destroy');
+
 	//actor
-	Route::get('actor/create', 'ActorController@create')->name('actor.create');
+	Route::get('actor/create', 'ActorController@create');
 	Route::post('actor', 'ActorController@store');
 	Route::get('actor/{actor}/edit', 'ActorController@edit');
 	Route::patch('actor/{actor}', 'ActorController@update')->name('actor.update');
@@ -46,6 +49,8 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('show/{show}/edit', 'ShowController@edit');
 	Route::patch('show/{show}', 'ShowController@update')->name('show.update');
 	Route::delete('show/{show}', 'ShowController@destroy')->name('show.destroy');
+	//admin
+
 });
 
 

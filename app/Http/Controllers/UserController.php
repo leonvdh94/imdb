@@ -3,32 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Movie;
-use App\Actor;
-use App\Show;
 use App\User;
 
-class AdminController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct(){
-        $this->middleware('admin');
-    }
-
     public function index()
     {
-        $movie = Movie::all();
-        $user = User::all();
-        $actor = Actor::all();
-        $show = Show::all();
-        return view('dashboard', compact('movie', 'user', 'show', 'actor'));
+        //
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -93,6 +80,9 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return back();
+    
     }
 }

@@ -110,8 +110,10 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Movie $movie)
+    public function destroy($id)
     {
-        //
+        $movie = Movie::find($id);
+        $movie->delete();
+        return back();
     }
 }
