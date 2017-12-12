@@ -19,6 +19,7 @@ Route::get('actor', 'ActorController@index');
 Route::get('actor/{actor}', 'ActorController@show');
 
 
+
 //Show
 Route::get('show', 'ShowController@index');
 Route::get('show/{show}', 'ShowController@show');
@@ -28,7 +29,7 @@ Route::get('show/{show}', 'ShowController@show');
 Route::group(['middleware' => 'admin'], function(){
 	Route::get('/admin', 'AdminController@index');
 	//actor
-	Route::get('actor/create', 'ActorController@create');
+	Route::get('actor/create', 'ActorController@create')->name('actor.create');
 	Route::post('actor', 'ActorController@store');
 	Route::get('actor/{actor}/edit', 'ActorController@edit');
 	Route::patch('actor/{actor}', 'ActorController@update')->name('actor.update');
