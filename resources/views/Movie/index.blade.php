@@ -2,32 +2,34 @@
 
 @section('content')
 <h2>Movielist:</h2>
-<div class="postercontainer">
-
+<div class="container">
+	
 
 	@foreach($movie as $movies)
-	<ul class="img-list">
-		<li>
-			<a href="{{url('movie/'.$movies->id)}}">
-				<img class="movieposter" src="{{asset('images/'.$movies->photo)}}">
-				<span class="text-content"><span>{{$movies->title}}</span></span>
-			</a>
-		</li>
-	</ul>
-
+	<div class="row">
+		<div class="col">
+			<ul class="img-list">
+				<li>
+					<a href="{{url('movie/'.$movies->id)}}">
+						<img class="movieposter" src="{{asset('images/'.$movies->photo)}}">
+						
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 	@endforeach
-</div>
+	
+
+
+	<br>
+
+	<a href="{{url('movie/create')}}">
+		<button class="btn btn-primary">Create</button>
+	</a>
 
 
 
-<br>
-
-<a href="{{url('movie/create')}}">
-	<button class="btn btn-primary">Create</button>
-</a>
 
 
-
-
-
-@endsection
+	@endsection

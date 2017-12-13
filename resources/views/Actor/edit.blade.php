@@ -25,9 +25,5 @@
     {!! Form::file('photo', null) !!}
 </div>
 
-<br>
-
-{!! Form::submit('Edit', ['class' => 'btn btn-primary']) !!}
-{!! Form::close() !!}
 
 @endsection

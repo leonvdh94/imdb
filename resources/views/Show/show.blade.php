@@ -17,8 +17,11 @@
 	</button>
 </div>
 
-
-
+<div class="seasons">
+	@foreach($show->season as $seasons)
+	<p>{{$seasons->title}}</p>
+	@endforeach
+</div>
 
 
 

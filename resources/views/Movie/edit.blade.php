@@ -22,9 +22,6 @@
     {!! Form::text('trailer', $movie->trailer, ['class' => 'form-control']) !!}
 </div>
 
-<br>
 
-{!! Form::submit('Edit', ['class' => 'btn btn-primary']) !!}
-{!! Form::close() !!}
 
 @endsection

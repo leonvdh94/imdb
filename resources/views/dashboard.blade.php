@@ -2,7 +2,9 @@
 @section('content')
 
 <table class="table table-striped table-dark">
-	<h1>List of users</h1>
+	<h1>List of users <a href="{{url('movie/create')}}">
+	<button class="btn btn-primary">Create</button>
+</a></h1> 
 	<thead>
 		<tr>
 			<th>#</th>
@@ -49,8 +51,8 @@
 	<tbody>
 		@foreach($movie as $movies)
 		<tr>
-			<td>{{$movies->id}}</a></td>
-			<td>{{$movies->title}}</td>
+			<td>{{$movies->id}}</td>
+			<td><a href="{{url('movie/'.$movies->id)}}">{{$movies->title}}</a></td>
 			<td>{{$movies->releasedate}}</td>
 			<td class="btn-group" role="group">
 				{!! Form::model($movies,['method' => 'DELETE','route'=>['movie.destroy', $movies->id]]) !!}
@@ -77,7 +79,7 @@
 		@foreach($show as $shows)
 		<tr>
 			<td>{{$shows->id}}</td>
-			<td>{{$shows->title}}</td>
+			<td><a href="{{url('show/'.$shows->id)}}">{{$shows->title}}</a></td>
 			<td>{{$shows->releasedate}}</td>
 			<td class="btn-group" role="group">
 				{!! Form::model($shows,['method' => 'DELETE','route'=>['show.destroy', $shows->id]]) !!}
@@ -104,8 +106,8 @@
 		@foreach($actor as $actors)
 		<tr>
 			<td>{{$actors->id}}</td>
-			<td>{{$actors->firstname}}</td>
-			<td>{{$actors->lastname}}</td>
+			<td><a href="{{url('actor/'.$actors->id)}}">{{$actors->firstname}}</a></td>
+			<td><a href="{{url('actor/'.$actors->id)}}">{{$actors->lastname}}</td>
 			<td>{{$actors->birthdate}}</td>
 			<td class="btn-group" role="group">
 				{!! Form::model($actors,['method' => 'DELETE','route'=>['actor.destroy', $actors->id]]) !!}

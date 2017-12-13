@@ -28,58 +28,65 @@
     </head>
 
     <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">IMDB</a>
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{{url('movie')}}">Movies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('actor')}}">Actors</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('show')}}">Shows</a>
+            </li>
+            
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
 
 
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="{{url('movie')}}">Movies</a></li>
-                <li><a href="{{url('actor')}}">Actors</a></li>
-                <li><a href="{{url('show')}}">Shows</a></li>
-            </ul>
-
-            <div class="aidslogin">
-                <ul>
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
-                    @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                        aria-expanded="false">
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-                            @if (Auth::check() && Auth::user()->role ==2)
-                            <a href="{{url('admin')}}">Adminpage</a>
-                            @endif
-                        </li>
-                        <li>
-                            <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                        style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-                </li>
-            </ul>
+      <ul class="navbar-nav">
+        <!-- Authentication Links -->
+        @if (Auth::guest())
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('login')}}">Login</a>
         </li>
-        @endif
-    </ul>
-</div>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('register')}}">Register</a>
+        </li>
+        @else
+        <li class="nav item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ Auth::user()->name }} 
+            </a>
+            <div class="dropdown-menu pull-right" aria-labelledyby="navbarDropdown">
+              @if (Auth::check() && Auth::user()->role ==2)
+              <a class="dropdown-item" href="{{url('admin')}}">Adminpage</a>
+              @endif
+              <a class="dropdown-item" href="{{route('logout')}}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+              Logout
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST"
+          style="display: none;">
+          {{ csrf_field() }}
+      </form>
+  </div>
+
+</li>
+@endif
+</ul>
+</nav>    
 
 
-</nav>
 
-<div class="contentcontainer">
-    @yield('content')
-</div>
+@yield('content')
+
 
 
 </body>
