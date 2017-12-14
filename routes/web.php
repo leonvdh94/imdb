@@ -25,6 +25,7 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::post('actor', 'ActorController@store');
 	Route::post('movie', 'MovieController@store');
 	Route::post('show', 'ShowController@store');
+	Route::post('season', 'SeasonController@store');
 	//edit page
 	Route::get('actor/{actor}/edit', 'ActorController@edit');
 	Route::get('movie/{movie}/edit', 'MovieController@edit');
@@ -45,3 +46,7 @@ Route::group(['middleware' => 'admin'], function(){
 Route::get('movie/{movie}', 'MovieController@show');
 Route::get('actor/{actor}', 'ActorController@show');
 Route::get('show/{show}', 'ShowController@show');
+
+Route::post('comment', 'CommentController@store');
+Route::delete('comment', 'CommentController@destroy')->name('comment.destroy');
+

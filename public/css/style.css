@@ -1,75 +1,16 @@
-.postercontainer {
-    text-align: center;
+.border{
+	border: 1px solid #E5E5E5 !important;
+	border-radius: 3px;
+	padding: 15px 0;
 }
 
-.movieposter {
-    height: 400px;
-    width: 250px;
-    margin: 0 auto;
-
+.cardshadow:hover{
+	-webkit-box-shadow: 0px 0px 50px -10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 50px -10px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 50px -10px rgba(0,0,0,0.75);
+	transition: box-shadow 0.3s ease-in-out;
 }
 
-.img-list {
-    list-style-type: none;
-    display: inline;
-    margin: 0;
-    padding: 0;
-}
-
-ul.img-list li {
-    display: inline-block;
-    height: 400px;
-    width: 250px;
-    margin: 0 1em 1em 0;
-    position: relative;
-
-}
-
-span.text-content {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    cursor: pointer;
-    display: table;
-    height: 400px;
-    width: 250px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    -webkit-transition: opacity 500ms;
-    -moz-transition: opacity 500ms;
-    -o-transition: opacity 500ms;
-    transition: opacity 500ms;
-
-}
-
-ul.img-list li:hover span.text-content {
-    opacity: 1;
-}
-
-span.text-content span {
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-}
-
-/*showpagina*/
-.infocontainer{
-    text-align: center;
-}
-iframe {
-    width: 850px;
-    height: 480px;
-    margin: 0 auto;
-}
-
-.infobox p {
-
-}
-
-.infoposter{
-    height: 400px;
-    width: 250px;
-    float: left;
-
+.navmargin{
+	margin-bottom: 50px;
 }

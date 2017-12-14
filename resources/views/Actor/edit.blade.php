@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('content')
-<h2>Edit pagina</h2>
+<h2>Edit {{$actor->firstname}} {{$actor->lastname}}</h2>
 {!! Form::model($actor , array('route' => array('actor.update', $actor->id), 'method' => 'PATCH', 'files' => true)) !!}
 
 
@@ -23,6 +23,10 @@
 
     {!! Form::label('photo', 'Photo:') !!}
     {!! Form::file('photo', null) !!}
+    <br><br>
+    {!! Form::submit('Edit', ['class' => 'btn btn-primary'])!!}
+
+    {!! Form::close()!!}
 </div>
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Show;
+use App\Season;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 

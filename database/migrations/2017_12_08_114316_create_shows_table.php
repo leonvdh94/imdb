@@ -19,6 +19,7 @@ class CreateShowsTable extends Migration
             $table->date('releasedate');
             $table->text('description');
             $table->string('photo')->default('default.jpg');
+            $table->text('story');
             $table->string('trailer');
         });
     }

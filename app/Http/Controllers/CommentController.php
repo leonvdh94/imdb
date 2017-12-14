@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Season;
 use Illuminate\Http\Request;
+use App\Comment;
+use Auth;
 
-class SeasonController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class SeasonController extends Controller
      */
     public function index()
     {
-      
+        //
     }
 
     /**
@@ -35,20 +36,27 @@ class SeasonController extends Controller
      */
     public function store(Request $request)
     {
-        $season = new Season();
-        $season->title = $request->title;
-        $season->show_id = $request->show_id;
-        $season->save();
+        $this->validate(request(),[
+            'comment' => 'required'
+        ]);
+
+        $comment = new Comment();
+        $comment->comment = $request->comment;
+        $comment->movie_id = $request->movie_id;
+        $comment->show_id = $request->show_id;
+        $comment->user_id = $request->user_id;
+        $comment->save();
+
         return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Season  $season
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Season $season)
+    public function show($id)
     {
         //
     }
@@ -56,10 +64,10 @@ class SeasonController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Season  $season
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Season $season)
+    public function edit($id)
     {
         //
     }
@@ -68,10 +76,10 @@ class SeasonController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Season  $season
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Season $season)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -79,11 +87,12 @@ class SeasonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Season  $season
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Season $season)
+    public function destroy(Comment $comment)
     {
-        //
+        $comment->delete();
+        return back();
     }
 }

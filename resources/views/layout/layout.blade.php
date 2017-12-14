@@ -28,7 +28,7 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navmargin">
           <a class="navbar-brand" href="#">IMDB</a>
           <ul class="navbar-nav mr-auto">
               <li class="nav-item">
@@ -45,7 +45,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
       </form>
 
 
@@ -63,7 +63,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ Auth::user()->name }} 
             </a>
-            <div class="dropdown-menu pull-right" aria-labelledyby="navbarDropdown">
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledyby="navbarDropdown">
               @if (Auth::check() && Auth::user()->role ==2)
               <a class="dropdown-item" href="{{url('admin')}}">Adminpage</a>
               @endif
@@ -84,8 +84,10 @@
 </nav>    
 
 
+<div class="container">
+  @yield('content')  
+</div>
 
-@yield('content')
 
 
 

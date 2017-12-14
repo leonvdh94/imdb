@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('content')
-<h2>Edit pagina</h2>
+<h1>Edit {{$movie->title}}</h1>
 {!! Form::model($movie , array('route' => array('movie.update', $movie->id), 'method' => 'PATCH', 'files' => true)) !!}
 
 
@@ -14,12 +14,16 @@
 
     {!! Form::label('photo', 'Photo:')!!}
     {!! Form::file('photo', null) !!}
-
+    <br>
     {!! Form::label('description', 'Description:')!!}
     {!! Form::text('description', $movie->description, ['class' => 'form-control']) !!}
 
     {!! Form::label('trailer', 'Trailer:')!!}
     {!! Form::text('trailer', $movie->trailer, ['class' => 'form-control']) !!}
+    <br>
+    {!! Form::submit('Edit', ['class' => 'btn btn-primary'])!!}
+
+    {!! Form::close()!!}
 </div>
 
 

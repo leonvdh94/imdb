@@ -1,26 +1,25 @@
 @extends('layout.layout')
 
 @section('content')
+
 <h2>Index pagina</h2>
-
-@foreach($show as $shows)
-
-<ul class="img-list">
-	<li>
-		<a href="{{url('show/'.$shows->id)}}">
-			<img class="movieposter" src="{{asset('images/'.$shows->photo)}}">
-			<span class="text-content"><span>{{$shows->title}}</span></span>
-		</a>
-	</li>
-</ul>
-
-@endforeach
-
 <br>
-<button>
-	<a href="{{url('show/create')}}">
-		Create
-	</a>
-</button>
-
+@foreach($show as $shows)
+<div class="row border">
+	<div class="col-md-3">		
+		<a href="{{url('show/'.$shows->id)}}">
+			<img class="card-img-top cardshadow" src="{{asset('images/'.$shows->photo)}}">
+		</a>
+	</div>
+	<div class="col-md-8 offset-md-1">
+		<p><b>{{$shows->title}}</b></p>
+		<p>{{$shows->description}}</p>
+		  <a href="{{url('show/'.$shows->id)}}">
+            <button class="btn btn-primary">Info</button>
+        </a>
+	</div>
+</div>
+<br>
+@endforeach
 @endsection
+
