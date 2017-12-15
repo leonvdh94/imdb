@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h2>Index pagina</h2>
+<h2>Showlist:</h2>
 <br>
 @foreach($show as $shows)
 <div class="row border">
