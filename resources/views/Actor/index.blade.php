@@ -15,7 +15,7 @@
         <p><b>Biography</b></p>
         <p>{{$actors->bio}}</p>
         <a href="{{url('actor/'.$actors->id)}}">
-            <button class="btn btn-primary">Info</button>
+            <button class="btn btn-primary">View more info</button>
         </a>
     </div>
 </div>

@@ -8,16 +8,18 @@
 	</div>
 	<div class="col-md-9">
 		<h1>{{$movie->title}}</h1>
+		<hr>
 		<p><b>Short description</b></p>
 		<p>{{$movie->description}}</p>	
 		<p><b>Story</b></p>
 		<p>{{$movie->story}}</p>
+		<br>
 		<div class="embed-responsive embed-responsive-16by9">
 			<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$movie->trailer}}" allowfullscreen></iframe>
 		</div>
+		<hr>
 	</div>
-</div>	
-<hr>
+</div>
 <div class="row">
 	<div class="col-md-3">
 		

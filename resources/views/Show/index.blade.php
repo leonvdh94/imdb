@@ -16,7 +16,7 @@
 		<p><b>Short description</b></p>
 		<p>{{$shows->description}}</p>
 		<a href="{{url('show/'.$shows->id)}}">
-			<button class="btn btn-primary">Info</button>
+			<button class="btn btn-primary">View more info</button>
 		</a>
 	</div>
 </div>

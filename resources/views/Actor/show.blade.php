@@ -9,6 +9,7 @@
 	</div>
 	<div class="col-md-9">
 		<h1>{{$actor->firstname}} {{$actor->lastname}}</h1>
+		<hr>
 		<p><b>Biograhpy</b></p>
 		<p>{{$actor->bio}}</p>	
 	</div>

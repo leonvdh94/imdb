@@ -27,7 +27,7 @@
         <p><b>Short description</b></p>
         <p>{{$movies->description}}</p>
         <a href="{{url('movie/'.$movies->id)}}">
-            <button class="btn btn-primary">View movie page</button>
+            <button class="btn btn-primary">View more info</button>
         </a>
     </div>
 </div>
@@ -45,7 +45,7 @@
         <p><b>Short description</b></p>
         <p>{{$shows->description}}</p>
         <a href="{{url('show/'.$shows->id)}}">
-            <button class="btn btn-primary">View show page</button>
+            <button class="btn btn-primary">View more info</button>
         </a>
     </div>
 </div>
@@ -63,7 +63,7 @@
        <p><b>Biography</b></p>
         <p>{{$actors->bio}}</p>
         <a href="{{url('show/'.$actors->id)}}">
-            <button class="btn btn-primary">View show page</button>
+            <button class="btn btn-primary">View more info</button>
         </a>
     </div>
 </div>

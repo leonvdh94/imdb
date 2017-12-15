@@ -29,7 +29,7 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navmargin">
-      <a class="navbar-brand" href="#">IMDB</a>
+      <a class="navbar-brand" href="{{url('/')}}">IMDB</a>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="{{url('movie')}}">Movies</a>
@@ -47,7 +47,7 @@
         <li class="nav-item">
           {!! Form::open(['action' => ['SearchController@search', ], 'method' => 'POST']) !!}
           {{ Form::token() }}
-          {{ Form::text('query', null, ['placeholder' => 'Search the moviedatabase...', 'class' => 'form-control']) }}
+          {{ Form::text('query', null, ['placeholder' => 'Search..', 'class' => 'form-control']) }}
         </li>
         <li class="nav-item">
           {{ Form::submit('Search', ['class' => 'btn btn-outline-primary my-2 my-sm-0']) }}
