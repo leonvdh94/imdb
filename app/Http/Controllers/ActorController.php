@@ -46,6 +46,13 @@ class ActorController extends Controller
         $actor->birthdate = $request->birthdate;
         $actor->bio = $request->bio;
 
+
+        $fullname = $actor->firstname . ' ' . $actor->lastname;
+        $actor->fullname = $fullname;
+      
+
+      
+
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $name = time() . '-' . $file->getClientOriginalname();
@@ -101,7 +108,7 @@ class ActorController extends Controller
         $actor->photo = $name;
     }
     $actor->save();
-    return redirect::to('actor');
+    return redirect::to('admin');
 }
 
     /**

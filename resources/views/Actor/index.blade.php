@@ -11,7 +11,8 @@
         </a>
     </div>
     <div class="col-md-8 offset-md-1">
-        <p><b>{{$actors->firstname}} {{$actors->lastname}}</b></p>
+        <h3>{{$actors->firstname}} {{$actors->lastname}}</h3>
+        <p><b>Biography</b></p>
         <p>{{$actors->bio}}</p>
         <a href="{{url('actor/'.$actors->id)}}">
             <button class="btn btn-primary">Info</button>

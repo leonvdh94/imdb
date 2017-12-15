@@ -12,11 +12,12 @@
 		</a>
 	</div>
 	<div class="col-md-8 offset-md-1">
-		<p><b>{{$shows->title}}</b></p>
+		<h3>{{$shows->title}}</h3>
+		<p><b>Short description</b></p>
 		<p>{{$shows->description}}</p>
-		  <a href="{{url('show/'.$shows->id)}}">
-            <button class="btn btn-primary">Info</button>
-        </a>
+		<a href="{{url('show/'.$shows->id)}}">
+			<button class="btn btn-primary">Info</button>
+		</a>
 	</div>
 </div>
 <br>

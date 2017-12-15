@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
@@ -12,9 +13,8 @@ class Comment extends Model
 	public function show(){
 		return $this->belongsTo(Show::class);
 	}
-	public function actor(){
-		return $this->belongsTo(actor::class);
+	public function user(){
+		return $this->belongsTo(User::class);
 	}
-	
 }
 

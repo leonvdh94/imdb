@@ -21,6 +21,7 @@ class CreateShowsTable extends Migration
             $table->string('photo')->default('default.jpg');
             $table->text('story');
             $table->string('trailer');
+            $table->timestamps();
         });
     }
 

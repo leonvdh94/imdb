@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Season;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class SeasonController extends Controller
 {
@@ -39,7 +40,7 @@ class SeasonController extends Controller
         $season->title = $request->title;
         $season->show_id = $request->show_id;
         $season->save();
-        return back();
+        return redirect::to('admin');
     }
 
     /**

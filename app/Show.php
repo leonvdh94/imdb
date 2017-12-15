@@ -9,7 +9,7 @@ class Show extends Model
 	public function season(){
 		return $this->hasMany(Season::class);
 	}
-	public function comments(){
+	public function comment(){
 		return $this->hasMany(Comment::class);
 	}
 }

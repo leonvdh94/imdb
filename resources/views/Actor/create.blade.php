@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('content')
-<h2>Create pagina</h2>
+<h2>Create new actor</h2>
 {!! Form::open(['url' => 'actor', 'method' => 'post', 'files' => true]) !!}
 
 <div class="form-group">
@@ -12,7 +12,7 @@
     {!! Form::text('lastname', '', ['class' => 'form-control']) !!}
 
     {!! Form::label('gender', 'Gender:')!!}
-    {!! Form::select('gender',['Male' => 'Male', 'Female' => 'Female', 'Toaster' => 'Toaster' ], '', ['class' => 'form-control']) !!}
+    {!! Form::select('gender', ['Male' => 'Male', 'Female' => 'Female', 'Toaster' => 'Toaster' ], '', ['class' => 'form-control']) !!}
 
     {!! Form::label('birthdate', 'Birthdate:') !!}
     {!! Form::date('birthdate', '', ['class' => 'form-control']) !!}

@@ -43,6 +43,7 @@ class MovieController extends Controller
         $movie->title = $request->title;
         $movie->releasedate = $request->releasedate;
         $movie->description = $request->description;
+        $movie->story = $request->story;
         $movie->trailer = $request->trailer;
         
 
@@ -65,8 +66,8 @@ class MovieController extends Controller
      */
     public function show(Movie $movie, User $user)
     {
-        return view('movie.show', compact('movie', 'user'));
-    }
+     return view('movie.show', compact('movie', 'user'));
+ }
 
     /**
      * Show the form for editing the specified resource.
@@ -88,12 +89,12 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-     $movie->title = $request->title;
-     $movie->releasedate = $request->releasedate;
-     $movie->description = $request->description;
-     $movie->trailer =  $request->trailer;
+       $movie->title = $request->title;
+       $movie->releasedate = $request->releasedate;
+       $movie->description = $request->description;
+       $movie->trailer =  $request->trailer;
 
-     if ($request->hasFile('photo')) {
+       if ($request->hasFile('photo')) {
         $file = $request->file('photo');
         $name = time() . '-' . $file->getClientOriginalname();
         $file = $file->move(public_path() . '/images/', $name);
@@ -102,7 +103,7 @@ class MovieController extends Controller
     
     
     $movie->save();
-    return redirect::to('movie');
+    return redirect::to('admin');
 }
 
     /**

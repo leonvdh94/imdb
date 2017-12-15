@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Show;
 use App\Season;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -42,6 +43,7 @@ class ShowController extends Controller
         $show->title = $request->title;
         $show->releasedate = $request->releasedate;
         $show->description = $request->description;
+        $show->story = $request->story;
         $show->trailer = $request->trailer;
         
 
@@ -62,9 +64,9 @@ class ShowController extends Controller
      * @param  \App\Show  $show
      * @return \Illuminate\Http\Response
      */
-    public function show(Show $show)
+    public function show(Show $show, User $user)
     {
-     return view('show.show', compact('show'));
+     return view('show.show', compact('show', 'user'));
  }
 
     /**
@@ -101,7 +103,7 @@ class ShowController extends Controller
 
 
         $show->save();
-        return redirect::to('show');
+        return redirect::to('admin');
     }
 
     /**

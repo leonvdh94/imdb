@@ -2,11 +2,10 @@
 
 namespace App;
 
+use App\Actor;
 use Illuminate\Database\Eloquent\Model;
 
 class Actor extends Model
 {
-	public function comments(){
-		return $this->hasMany(Comment::class);
-	}
+	
 }
